@@ -4,11 +4,9 @@
         "es6": true
     },
     "extends": [
-        "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "airbnb",
-        "prettier/@typescript-eslint",
-        "plugin:prettier/recommended"
+				"plugin:@typescript-eslint/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -24,21 +22,21 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint",
-        "react-hooks",
-        "prettier"
+				"react-hooks",
+        "@typescript-eslint"
     ],
     "rules": {
-      "prettier/prettier": "error",
-      "react-hooks/rules-of-hooks": "error",
+			"react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
       "import/prefer-default-export": "off",
-      "settings": {
-        "import/resolver": {
-          "typescript": {}
+      "camelcase": "off",
+      "@typescript-eslint/explicit-function-return-type": [
+        "error",
+        {
+          "allowExpressions": true
         }
-      },
+      ],
       "import/extensions": [
         "error",
         "ignorePackages",
@@ -46,6 +44,19 @@
           "ts": "never",
           "tsx": "never"
         }
-      ]
+      ],
+      "import/no-unresolved": [
+        2,
+        { "caseSensitive": false }
+     ]
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        },
+        "typescript": {}
+      }
     }
 }
+
